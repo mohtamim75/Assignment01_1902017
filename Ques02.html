@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three Frames Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .frame-container {
+            display: flex;
+        }
+
+        .left-frame {
+            width: 20%;
+            background-color: #ccc2c2;
+            padding: 20px;
+        }
+
+        .center-frame {
+            width: 60%;
+            padding: 20px;
+        }
+
+        .right-frame {
+            width: 20%;
+            background-color: #ccc2c2;
+            padding: 20px;
+        }
+
+        audio, video {
+            max-width: 80%;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame-container">
+        <div class="left-frame">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#">Audio Section</a></li>
+                <li><a href="#">Video Section</a></li>
+            </ul>
+        </div>
+
+        <div class="center-frame">
+            <h1>Welcome to this demo webpage</h1>
+            <div id="Audio Section">
+                <h2>Audio Section</h2>
+                <p>This is the content of Audio Section.</p>
+                <audio controls>
+                    <source src="Audio.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div id="VideoSection">
+                <h2>Video Section</h2>
+                <p>This is the content of Video Section.</p>
+                <video controls>
+                    <source src="Video.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+            </div>
+        </div>
+        
+        <div class="right-frame">
+            <h2>Remarks</h2>
+            <p>Audio and Video contents are successfully embeded in this webpage.</p>
+        </div>
+    </div>
+</body>
+</html>

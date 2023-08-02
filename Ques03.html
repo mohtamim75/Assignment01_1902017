@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Capitals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select {
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #capitalDisplay {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        #submitBtn {
+            padding: 10px 20px;
+            background-color: #12cf61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a country to see its capital</h1>
+    <form id="countryForm">
+        <label for="countrySelect">Choose a country:</label>
+        <select id="countrySelect">
+            <option value="bd">Bangladesh</option>
+            <option value="ind">India</option>
+            <option value="sl">Sri Lanka</option>
+            <option value="pak">Pakistan</option>
+            <option value="afg">Afghanistan</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit" id="submitBtn">
+    </form>
+    <div id="capitalDisplay"></div>
+
+    <script>
+        const countryForm = document.getElementById("countryForm");
+        const countrySelect = document.getElementById("countrySelect");
+        const capitalDisplay = document.getElementById("capitalDisplay");
+
+        countryForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const selectedCountry = countrySelect.value;
+            let capital;
+
+            switch (selectedCountry) {
+                case "bd":
+                    capital = "Dhaka";
+                    break;
+                case "ind":
+                    capital = "New Delhi";
+                    break;
+                case "sl":
+                    capital = "Colombo";
+                    break;
+                case "pak":
+                    capital = "Islamabad";
+                    break;
+                case "afg":
+                    capital = "Kabul";
+                    break;
+                default:
+                    capital = "Unknown";
+                    break;
+            }
+
+            capitalDisplay.textContent = `The capital of ${countrySelect.options[countrySelect.selectedIndex].text} is ${capital}.`;
+        });
+    </script>
+</body>
+</html>
